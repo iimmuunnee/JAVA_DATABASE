@@ -27,6 +27,12 @@ public class ProductDTO {
 		this.regdate = regdate;
 	}
 
+	public ProductDTO(int pno, int pprice) {
+		super();
+		this.pno = pno;
+		this.pprice = pprice;
+	}
+
 	public int getPno() {
 		return pno;
 	}

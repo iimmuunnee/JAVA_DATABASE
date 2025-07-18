@@ -5,4 +5,23 @@
 		INSERT INTO tbl_product(pname, pprice, pcnt)
 		VALUES(#{pname}, #{pprice}, #{pcnt})
 	</insert>
+	<select id="select" resultType="ProductDTO">
+		SELECT * 
+		FROM tbl_product
+		ORDER BY pno DESC, pcnt DESC
+	</select>
+	<select id="search" resultType="ProductDTO">
+		SELECT *
+		FROM tbl_product
+		WHERE pname = #{keyword}
+	</select>
+	<delete id="delete">
+		DELETE FROM tbl_product
+		WHERE pno = #{pno}
+	</delete>
+	<update id="update" parameterType="ProductDTO">
+		UPDATE tbl_product
+		SET pprice = #{pprice}
+		WHERE pno = #{pno}
+	</update>
 </mapper>
